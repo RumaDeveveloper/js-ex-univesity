@@ -30,15 +30,14 @@ const personaleTable = document.getElementById('personale-table');
 const iscrittiTable = document.getElementById('iscritti-table');
 
 personale.forEach(p => {
-    const row = personaleTable.insertRow();
+    const row = personaleTbody.insertRow();
     row.insertCell().textContent = p.ruolo;
     row.insertCell().textContent = p.nome;
     row.insertCell().textContent = p.cognome;
     row.insertCell().textContent = p.eta;
 });
-
 iscritti.forEach(i => {
-    const row = iscrittiTable.insertRow();
+    const row = iscrittiTbody.insertRow();
     row.insertCell().textContent = i.nome;
     row.insertCell().textContent = i.cognome;
     row.insertCell().textContent = i.eta;
@@ -50,6 +49,8 @@ iscritti.forEach(i => {
     row.insertCell().textContent = i.punteggioTotale;
     row.insertCell().textContent = i.cfu;
 });
+
+
 
 // Gestisci il form di registrazione
 const form = document.getElementById('registration-form');
