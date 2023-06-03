@@ -3,7 +3,8 @@ import ViceDirettore from './ViceDirettore.js';
 import Insegnante from './Insegnante.js';
 import AddettoMansioni from './AddettoMansioni.js';
 import Studente from './Studente.js';
-import database from './database.json';
+import database from './database.js';
+
 
 // Crea le istanze per il personale scolastico e gli studenti
 const personale = database.personale.map(d => {
@@ -25,9 +26,9 @@ const iscritti = database.iscritti.map(d => {
     return new Studente(d.nome, d.cognome, d.eta, d.anno, d.corso, d.indirizzo, d.esamiCompletati, d.esamiRimanenti, d.punteggioTotale, d.cfu);
 });
 
-// Aggiungi il personale scolastico e gli studenti alle tabelle
-const personaleTable = document.getElementById('personale-table');
-const iscrittiTable = document.getElementById('iscritti-table');
+
+const personaleTbody = document.getElementById('personale-tbody');
+const iscrittiTbody = document.getElementById('iscritti-tbody');
 
 personale.forEach(p => {
     const row = personaleTbody.insertRow();
@@ -36,6 +37,7 @@ personale.forEach(p => {
     row.insertCell().textContent = p.cognome;
     row.insertCell().textContent = p.eta;
 });
+
 iscritti.forEach(i => {
     const row = iscrittiTbody.insertRow();
     row.insertCell().textContent = i.nome;
@@ -51,9 +53,9 @@ iscritti.forEach(i => {
 });
 
 
-
 // Gestisci il form di registrazione
 const form = document.getElementById('registration-form');
+
 form.addEventListener('submit', event => {
     event.preventDefault();
 
@@ -62,7 +64,6 @@ form.addEventListener('submit', event => {
     const cognome = form.elements['cognome'].value;
     const eta = parseInt(form.elements['eta'].value, 10);
 
-    // Aggiungi ulteriori campi specifici per ogni ruolo
 
     // Crea l'utente in base al ruolo e aggiungilo al database
     let newUser;
@@ -86,10 +87,10 @@ form.addEventListener('submit', event => {
 
     // Aggiorna la tabella appropriata
     if (newUser instanceof Studente) {
-        const row = iscrittiTable.insertRow();
+        const row = iscrittiTbody.insertRow();
         // Aggiungi le celle alla riga come fatto in precedenza per gli studenti
     } else {
-        const row = personaleTable.insertRow();
+        const row = personaleTbody.insertRow();
         // Aggiungi le celle alla riga come fatto in precedenza per il personale scolastico
     }
 });
