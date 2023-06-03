@@ -1,12 +1,12 @@
-import Direttore from './Direttore.js';
-import ViceDirettore from './ViceDirettore.js';
-import Insegnante from './Insegnante.js';
-import AddettoMansioni from './AddettoMansioni.js';
-import Studente from './Studente.js';
-import database from './database.js';
+import Direttore from './Components/Direttore.js';
+import ViceDirettore from './Components/ViceDirettore.js';
+import Insegnante from './Components/Insegnante.js';
+import AddettoMansioni from './Components/AddettoMansioni.js';
+import Studente from './Components/Studente.js';
+import database from './database/database.js';
 
 
-// Crea le istanze per il personale scolastico e gli studenti
+// Creazione le istanze per il personale scolastico
 const personale = database.personale.map(d => {
     switch (d.ruolo) {
         case 'Direttore':
@@ -22,6 +22,7 @@ const personale = database.personale.map(d => {
     }
 });
 
+// Creazione delle istanze per gli studenti
 const iscritti = database.iscritti.map(d => {
     return new Studente(d.nome, d.cognome, d.eta, d.anno, d.corso, d.indirizzo, d.esamiCompletati, d.esamiRimanenti, d.punteggioTotale, d.cfu);
 });
@@ -50,47 +51,4 @@ iscritti.forEach(i => {
     row.insertCell().textContent = i.esamiRimanenti;
     row.insertCell().textContent = i.punteggioTotale;
     row.insertCell().textContent = i.cfu;
-});
-
-
-// Gestisci il form di registrazione
-const form = document.getElementById('registration-form');
-
-form.addEventListener('submit', event => {
-    event.preventDefault();
-
-    const role = form.elements['role'].value;
-    const nome = form.elements['nome'].value;
-    const cognome = form.elements['cognome'].value;
-    const eta = parseInt(form.elements['eta'].value, 10);
-
-
-    // Crea l'utente in base al ruolo e aggiungilo al database
-    let newUser;
-    switch (role) {
-        case 'studente':
-            // Aggiungi i campi specifici per gli studenti e crea un nuovo oggetto Studente
-            newUser = new Studente(nome, cognome, eta, /* altri campi */);
-            iscritti.push(newUser);
-            break;
-        case 'insegnante':
-            newUser = new Insegnante(nome, cognome, eta);
-            personale.push(newUser);
-            break;
-        case 'addettoMansioni':
-            newUser = new AddettoMansioni(nome, cognome, eta);
-            personale.push(newUser);
-            break;
-        default:
-            return;
-    }
-
-    // Aggiorna la tabella appropriata
-    if (newUser instanceof Studente) {
-        const row = iscrittiTbody.insertRow();
-        // Aggiungi le celle alla riga come fatto in precedenza per gli studenti
-    } else {
-        const row = personaleTbody.insertRow();
-        // Aggiungi le celle alla riga come fatto in precedenza per il personale scolastico
-    }
 });

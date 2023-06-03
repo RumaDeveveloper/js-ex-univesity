@@ -30,7 +30,54 @@ let database = {
             "cognome": "Neri",
             "eta": 49
         },
-
+        {
+            "ruolo": "Insegnante",
+            "nome": "Laura",
+            "cognome": "Neri",
+            "eta": 49
+        },
+        {
+            "ruolo": "Insegnante",
+            "nome": "Laura",
+            "cognome": "Neri",
+            "eta": 49
+        },
+        {
+            "ruolo": "Insegnante",
+            "nome": "Laura",
+            "cognome": "Neri",
+            "eta": 49
+        },
+        {
+            "ruolo": "Insegnante",
+            "nome": "Laura",
+            "cognome": "Neri",
+            "eta": 49
+        },
+        {
+            "ruolo": "Insegnante",
+            "nome": "Laura",
+            "cognome": "Neri",
+            "eta": 49
+        },
+        {
+            "ruolo": "Insegnante",
+            "nome": "Laura",
+            "cognome": "Neri",
+            "eta": 49
+        },
+        {
+            "ruolo": "Insegnante",
+            "nome": "Laura",
+            "cognome": "Neri",
+            "eta": 49
+        },
+        {
+            "ruolo": "Insegnante",
+            "nome": "Laura",
+            "cognome": "Neri",
+            "eta": 49
+        },
         {
             "ruolo": "Insegnante",
             "nome": "Laura",
@@ -135,6 +182,66 @@ let database = {
         }
     ],
     "iscritti": [
+        {
+            "nome": "Giovanni",
+            "cognome": "Rizzo",
+            "eta": 20,
+            "anno": 1,
+            "corso": "Informatica",
+            "indirizzo": "Sistemi informativi",
+            "esamiCompletati": 3,
+            "esamiRimanenti": 3,
+            "punteggioTotale": 75,
+            "cfu": 18
+        },
+        {
+            "nome": "Giovanni",
+            "cognome": "Rizzo",
+            "eta": 20,
+            "anno": 1,
+            "corso": "Informatica",
+            "indirizzo": "Sistemi informativi",
+            "esamiCompletati": 3,
+            "esamiRimanenti": 3,
+            "punteggioTotale": 75,
+            "cfu": 18
+        },
+        {
+            "nome": "Giovanni",
+            "cognome": "Rizzo",
+            "eta": 20,
+            "anno": 1,
+            "corso": "Informatica",
+            "indirizzo": "Sistemi informativi",
+            "esamiCompletati": 3,
+            "esamiRimanenti": 3,
+            "punteggioTotale": 75,
+            "cfu": 18
+        },
+        {
+            "nome": "Giovanni",
+            "cognome": "Rizzo",
+            "eta": 20,
+            "anno": 1,
+            "corso": "Informatica",
+            "indirizzo": "Sistemi informativi",
+            "esamiCompletati": 3,
+            "esamiRimanenti": 3,
+            "punteggioTotale": 75,
+            "cfu": 18
+        },
+        {
+            "nome": "Giovanni",
+            "cognome": "Rizzo",
+            "eta": 20,
+            "anno": 1,
+            "corso": "Informatica",
+            "indirizzo": "Sistemi informativi",
+            "esamiCompletati": 3,
+            "esamiRimanenti": 3,
+            "punteggioTotale": 75,
+            "cfu": 18
+        },
         {
             "nome": "Giovanni",
             "cognome": "Rizzo",
