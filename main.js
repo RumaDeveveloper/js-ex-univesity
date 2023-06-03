@@ -2,7 +2,7 @@ import Direttore from './Components/Direttore.js';
 import ViceDirettore from './Components/ViceDirettore.js';
 import Insegnante from './Components/Insegnante.js';
 import AddettoMansioni from './Components/AddettoMansioni.js';
-import Studente from './Components/Studente.js';
+import Iscritto from './Components/Iscritto.js';
 import database from './database/database.js';
 
 
@@ -24,12 +24,12 @@ const personale = database.personale.map(d => {
 
 // Creazione delle istanze per gli studenti
 const iscritti = database.iscritti.map(d => {
-    return new Studente(d.nome, d.cognome, d.eta, d.anno, d.corso, d.indirizzo, d.esamiCompletati, d.esamiRimanenti, d.punteggioTotale, d.cfu);
+    return new Iscritto(d.nome, d.cognome, d.eta, d.anno, d.corso, d.indirizzo, d.esamiCompletati, d.esamiRimanenti, d.punteggioTotale, d.cfu);
 });
 
 
 const personaleTbody = document.getElementById('personale-tbody');
-const iscrittiTbody = document.getElementById('iscritti-tbody');
+const iscrittiTbody = document.getElementById('studenti-tbody');
 
 personale.forEach(p => {
     const row = personaleTbody.insertRow();
