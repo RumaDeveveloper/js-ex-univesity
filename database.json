@@ -1,0 +1,24 @@
+{
+    "personale": [
+        {
+            "ruolo": "Direttore",
+            "nome": "Mario",
+            "cognome": "Rossi",
+            "eta": 55
+        }
+    ],
+    "iscritti": [
+        {
+            "nome": "Luca",
+            "cognome": "Bianchi",
+            "eta": 20,
+            "anno": 1,
+            "corso": "Ingegneria",
+            "indirizzo": "Informatica",
+            "esamiCompletati": 3,
+            "esamiRimanenti": 2,
+            "punteggioTotale": 75,
+            "cfu": 12
+        }
+    ]
+}
