@@ -9,4 +9,8 @@ export default class PersonaleScolastico extends Utente {
     get ruolo() {
         return this._ruolo;
     }
+
+    set ruolo(ruolo) {
+         this._ruolo  = ruolo;
+    }
 }

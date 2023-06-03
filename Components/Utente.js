@@ -9,11 +9,23 @@ export default class Utente {
         return this._nome;
     }
 
+    set nome(nome) {
+        this._nome = nome;
+    }
+
     get cognome() {
         return this._cognome;
     }
 
+    set cognome(cognome) {
+         this._cognome = cognome;
+     }
+
     get eta() {
         return this._eta;
+    }
+
+    set eta(eta) {
+         this._eta = eta;
     }
 }
