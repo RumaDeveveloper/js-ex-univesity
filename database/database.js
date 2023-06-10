@@ -508,7 +508,5 @@ let database = {
             "cfu": 36
         }
     ]
-}
-
-
+};
 export default database;
